@@ -3,30 +3,50 @@
         "id":1,
         "name":"Chevy",
         "price":15000,
-        "year":2016
+        "year":2016,
+        "contact":{
+            "dealer":"A",
+            "number":"1111111111"
+        }
     },
     {
         "id":2,
         "name":"Ford",
         "price":35000,
-        "year":2015
+        "year":2015,
+        "contact":{
+            "dealer":"B",
+            "number":"122111111"
+        }
     },
     {
         "id":3,
         "name":"Audi",
         "price":55000,
-        "year":2017
+        "year":2017,
+        "contact":{
+            "dealer":"C",
+            "number":"1113311111"
+        }
     },
     {
         "id":4,
         "name":"BMW",
         "price":85000,
-        "year":2018
+        "year":2018,
+        "contact":{
+            "dealer":"D",
+            "number":"111111444111"
+        }
     },
     {
         "id":5,
         "name":"Lambo",
         "price":95000,
-        "year":2019
+        "year":2019,
+        "contact":{
+            "dealer":"E",
+            "number":"1111551111"
+        }
     }
 ]

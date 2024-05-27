@@ -1,5 +1,5 @@
 <script setup>
-import cars from "../data/cars.json";
+import cars from "@/data/cars.json";
 import {RouterLink} from "vue-router";
 </script>
 <template>
