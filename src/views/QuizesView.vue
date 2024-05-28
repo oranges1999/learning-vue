@@ -17,13 +17,6 @@ watch(search,()=>{
     </header>
     <div class="options-container">
       <Card v-for="quiz in quizes" :key="quiz.id" :quiz="quiz"/>
-      <!-- <div v-for="quiz in quizes" :key="quiz.id" class="card">
-        <img :src="quiz.img" alt="">
-        <div class="card-text">
-          <h2>{{ quiz.name }}</h2>
-          <p>{{ quiz.questions.length }} quizes</p>
-        </div>
-      </div> -->
     </div>
 </template>
 
