@@ -30,7 +30,7 @@ const addNote = ()=>{
   <main>
     <div v-if="showModal" class="overlay">
       <div class="modal">
-        <textarea v-model="newNote.trim" name="note" id="note" cols="30" rows="10"></textarea>
+        <textarea v-model.trim="newNote" name="note" id="note" cols="30" rows="10"></textarea>
         <p v-if="errorMsg">{{ errorMsg }}</p>
         <button class="add" @click="addNote">Add Note</button>
         <button class="close" @click="showModal=false">x</button>
