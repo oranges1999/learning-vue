@@ -10,7 +10,7 @@ const props = defineProps({
         required: true,
     },
 })
-defineEmits(["toggle-complete"])
+defineEmits(["toggle-complete","edit-todo","update-todo","delete-todo"])
 </script>
 
 <template>
@@ -21,15 +21,34 @@ defineEmits(["toggle-complete"])
             @input="$emit('toggle-complete', index)"
         />
         <div class="todo">
-            <input v-if="todo.Editing" type="text" :value="todo.todo">
+            <input 
+              v-if="todo.isEditing" 
+              type="text" 
+              :value="todo.todo"
+              @input="$emit('update-todo',$event.target.value, index)"  
+            >
             <span v-else :class="{'completed-todo':todo.isCompleted}">
                 {{ todo.todo }}
             </span>
         </div>
         <div class="todo-actions" v-if="!todo.isCompleted">
-            <Icon v-if="todo.Editing" icon="ph:check-circle-light" class="icon" width="22" height="22" style="color: #00ff40" />
-            <Icon v-else icon="ph:pencil-fill" class="icon" width="22" height="22" style="color: #00ff40" />
-            <Icon icon="ph:trash"class="icon" width="22" height="22"  style="color: #f95e5e" />
+            <Icon 
+              v-if="todo.isEditing" 
+              icon="ph:check-circle-light" 
+              class="icon" width="22" height="22" style="color: #00ff40"
+              @click="$emit('edit-todo', index)"   
+            />
+            <Icon 
+              v-else 
+              icon="ph:pencil-fill" 
+              class="icon" width="22" height="22" style="color: #00ff40" 
+              @click="$emit('edit-todo', index)"  
+            />
+            <Icon 
+              icon="ph:trash"
+              class="icon" width="22" height="22"  style="color: #f95e5e" 
+              @click="$emit('delete-todo',todo.id)"  
+            />
         </div>
     </li>
 </template>
